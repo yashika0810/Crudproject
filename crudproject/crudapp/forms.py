@@ -4,5 +4,5 @@ from .models import Employee
 
 class EmployeeForm(forms.ModelForm):
     class Meta:
-        model = Employee
+        model = Update
         fields = "__all__"
