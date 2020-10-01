@@ -38,8 +38,10 @@ def edit(request,id):
 
 def update(request,id):
     employee=Employee.objects.get(id=id)
-    form=EmployeeForm(request.POST)
+    form=EmployeeForm(request.POST, instance=Employee)
     if form.is_valid():
         form.save()
         return redirect("/show")
     return render(request,'edit.html',{'employee':employee})
+
+
